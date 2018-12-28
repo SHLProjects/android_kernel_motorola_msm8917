@@ -409,7 +409,7 @@
 		compatible = "qcom,msm-thermal";
 		qcom,sensor-id = <5>;
 		qcom,poll-ms = <250>;
-		qcom,limit-temp = <60>;
+		qcom,limit-temp = <72>;
 		qcom,temp-hysteresis = <10>;
 		qcom,freq-step = <2>;
 		qcom,core-limit-temp = <80>;
@@ -455,12 +455,12 @@
 		qcom,bcl-hotplug-list = <&CPU2 &CPU3>;
 		qcom,bcl-soc-hotplug-list = <&CPU2 &CPU3>;
 		qcom,ibat-monitor {
-			qcom,low-threshold-uamp = <3400000>;
-			qcom,high-threshold-uamp = <4200000>;
+			qcom,low-threshold-uamp = <1500000>;
+			qcom,high-threshold-uamp = <1750000>;
 			qcom,mitigation-freq-khz = <1094400>;
-			qcom,vph-high-threshold-uv = <3500000>;
-			qcom,vph-low-threshold-uv = <3200000>;
-			qcom,soc-low-threshold = <10>;
+			qcom,vph-high-threshold-uv = <3600000>;
+			qcom,vph-low-threshold-uv = <3550000>;
+			qcom,soc-low-threshold = <15>;
 			qcom,thermal-handle = <&msm_thermal_freq>;
 		};
 	};
@@ -781,7 +781,7 @@
 		compatible = "qcom,cpu-clock-8917";
 		reg =	<0xb011050 0x8>,
 			<0x00a412c 0x8>;
-		reg-names = "apcs-c1-rcg-base", "efuse";
+		reg-names = "apcs-c1-rcg-base", "efuse", "efuse1";
 		qcom,num-cluster;
 		vdd-c1-supply = <&apc_vreg_corner>;
 		clocks = <&clock_gcc clk_gpll0_ao_clk_src>,
@@ -792,7 +792,8 @@
 			<  960000000 1>,
 			< 1094400000 2>,
 			< 1248000000 3>,
-			< 1401000000 4>;
+			< 1401000000 4>,
+			< 1497600000 5>;
 
 		qcom,speed1-bin-v0-c1 =
 			<          0 0>,
@@ -1340,7 +1341,7 @@
 		qcom,use-sw-ahash-algo;
 		qcom,use-sw-hmac-algo;
 		qcom,use-sw-aead-algo;
-		qcom,ce-opp-freq = <100000000>;
+		qcom,ce-opp-freq = <160000000>;
 	};
 
 	qcom_cedev: qcedev@720000 {
@@ -1365,7 +1366,7 @@
 			 <&clock_gcc clk_gcc_crypto_axi_clk>;
 		clock-names = "core_clk_src", "core_clk",
 				"iface_clk", "bus_clk";
-		qcom,ce-opp-freq = <100000000>;
+		qcom,ce-opp-freq = <160000000>;
 	};
 
 	qcom_seecom: qseecom@85b00000 {
@@ -1393,7 +1394,7 @@
 			 <&clock_gcc clk_gcc_crypto_axi_clk>;
 		clock-names = "core_clk_src", "core_clk",
 				"iface_clk", "bus_clk";
-		qcom,ce-opp-freq = <100000000>;
+		qcom,ce-opp-freq = <160000000>;
 	};
 
 	qcom,iris-fm {
@@ -1801,7 +1802,7 @@
 			 <&clock_gcc clk_gcc_crypto_axi_clk>;
 		clock-names = "core_clk_src", "core_clk",
 				"iface_clk", "bus_clk";
-		qcom,ce-opp-freq = <100000000>;
+		qcom,ce-opp-freq = <160000000>;
 	};
 
 	qcom,msm-ssc-sensors {

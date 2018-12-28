@@ -317,7 +317,7 @@
 			compatible = "qcom,spm-regulator";
 			reg = <0x2000 0x100>;
 			regulator-name = "pm8917_s5";
-			regulator-min-microvolt = <1050000>;
+			regulator-min-microvolt = <1015000>;
 			regulator-max-microvolt = <1350000>;
 		};
 	};
@@ -518,7 +518,7 @@
 
 		qcom,cpr-fuse-corners = <3>;
 		qcom,cpr-voltage-ceiling = <1155000 1225000 1350000>;
-		qcom,cpr-voltage-floor =   <1050000 1050000 1090000>;
+		qcom,cpr-voltage-floor =   <1030000 1050000 1100000>;
 		vdd-apc-supply = <&pm8917_s5>;
 
 		mem-acc-supply = <&mem_acc_vreg_corner>;

@@ -459,7 +459,7 @@ static struct alpha_pll_clk gpll3_clk_src = {
 	.config_ctl_val = 0x4001055b,
 	.test_ctl_hi_val = 0x40000600,
 	.c = {
-		.rate = 1050000000,
+		.rate = 1300000000,
 		.parent = &xo_clk_src.c,
 		.dbg_name = "gpll3_clk_src",
 		.ops = &clk_ops_dyna_alpha_pll,
@@ -807,6 +807,7 @@ static struct clk_freq_tbl ftbl_gcc_oxili_gfx3d_clk_8917[] = {
 	F_SLEW( 523200000, 1046400000,	  gpll3,	1,	0,	0),
 	F_SLEW( 550000000, 1100000000,	  gpll3,	1,	0,	0),
 	F_SLEW( 598000000, 1196000000,	  gpll3,	1,	0,	0),
+	F_SLEW( 650000000, 1300000000,	  gpll3,	1,	0,	0),
 	F_END
 };
 
@@ -4141,8 +4142,6 @@ static int get_mmio_addr(struct platform_device *pdev, u32 nbases)
 
 static void override_for_8917(int speed_bin)
 {
-	gpll3_clk_src.c.rate = 930000000;
-
 	OVERRIDE_FMAX3(csi0,
 		LOWER, 100000000, LOW, 200000000, NOMINAL, 266670000);
 	/* Frequency Table same as 8937 */
@@ -4186,7 +4185,7 @@ static void override_for_8917(int speed_bin)
 	} else {
 		OVERRIDE_FMAX5(gfx3d,
 			LOWER, 270000000, LOW, 400000000, NOMINAL, 484800000,
-			NOM_PLUS, 523200000, HIGH, 598000000);
+			NOM_PLUS, 523200000, HIGH, 650000000);
 		OVERRIDE_FTABLE(gfx3d, ftbl_gcc_oxili_gfx3d_clk, 8917);
 	}
 
