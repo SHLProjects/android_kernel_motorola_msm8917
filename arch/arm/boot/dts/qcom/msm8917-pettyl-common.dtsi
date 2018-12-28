@@ -442,18 +442,18 @@
 };
 
 &pmi8950_charger {
-	qcom,fastchg-current-ma = <1850>;
-	qcom,chg-thermal-mitigation = <1850>, <1600>, <1200>, <1000>,
-					<700>, <400>;
+	qcom,fastchg-current-ma = <2000>;
+	qcom,chg-thermal-mitigation = <2000>, <1850>, <1600>, <1200>,
+					<1000>, <700>;
 	/delete-property/ qcom,dc-thermal-mitigation;
-	qcom,parallel-charge-current-map = <1850 1850 0>,
+	qcom,parallel-charge-current-map = <2000 2000 0>,
+					<1850 1850 0>,
 					<1600 1600 0>,
 					<1200 1200 0>,
 					<1000 1000 0>,
-					<700 700 0>,
-					<400 400 0>;
+					<700 700 0>;
 	qcom,stepchg-voltage-mv = <4400>;
-	qcom,stepchg-current-ma = <1850>;
+	qcom,stepchg-current-ma = <2000>;
 	qcom,stepchg-taper-ma = <1500>;
 	qcom,stepchg-iterm-ma = <125>;
 	/delete-property/ qcom,enable-hvdcp-9v;
@@ -471,8 +471,8 @@
 &pmi8950_fg {
 	qcom,ext-sense-type; /* External Sense Resistor */
 	qcom,thermal-coefficients =  /bits/ 16 <0x2d87 0x9151 0x7d3c>;
-	qcom,irq-volt-empty-mv = <3200>;
-	qcom,fg-cutoff-voltage-mv = <3400>;
+	qcom,irq-volt-empty-mv = <3100>;
+	qcom,fg-cutoff-voltage-mv = <3300>;
 };
 &pm8937_vadc {
 	chan@11 {
@@ -486,7 +486,7 @@
 &usb_otg {
 	qcom,hsusb-otg-phy-init-seq =
 		<0x53 0x80 0x37 0x81 0x33 0x82 0x13 0x83 0xffffffff>;
-	qcom,chg-dcp-icl = <1800>;
+	qcom,chg-dcp-icl = <2000>;
 };
 &soc{
 	qcom,msm-thermal {
