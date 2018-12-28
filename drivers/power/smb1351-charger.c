@@ -3640,8 +3640,8 @@ static irqreturn_t smb1351_chg_stat_handler(int irq, void *dev_id)
 
 #define DEFAULT_SDP_MA		500
 #define DEFAULT_CDP_MA		1500
-#define DEFAULT_DCP_MA		1800
-#define DEFAULT_HVDCP_MA	1800
+#define DEFAULT_DCP_MA		2000
+#define DEFAULT_HVDCP_MA	2000
 #define DEFAULT_HVDCP3_MA	3000
 static int smb1351_update_usb_supply_icl(struct smb1351_charger *chip)
 {

@@ -1310,22 +1310,22 @@ struct max17042_config_data eg30_lg_config = {
 
 	/* App data */
 	.full_soc_thresh = 0x6200,	/* 0x13 */
-	.design_cap = 2086,	/* 0x18 mAHr*/
+	.design_cap = 2120,	/* 0x18 mAHr*/
 	.ichgt_term = 70,	/* 0x1E mA */
 
 	/* MG3 config */
 	.filter_cfg = 0x87A4,	/* 0x29 */
 
 	/* MG3 save and restore */
-	.fullcap = 2086,	/* 0x10 mAh*/
-	.fullcapnom = 2086,	/* 0x23 mAh */
+	.fullcap = 2120,	/* 0x10 mAh*/
+	.fullcapnom = 2100,	/* 0x23 mAh */
 	.qrtbl00 = 0x1E01,	/* 0x12 */
 	.qrtbl10 = 0x1281,	/* 0x22 */
 	.qrtbl20 = 0x0781,	/* 0x32 */
 	.qrtbl30 = 0x0681,	/* 0x42 */
 
 	/* Cell technology from power_supply.h */
-	.cell_technology = POWER_SUPPLY_TECHNOLOGY_LION,
+	.cell_technology = POWER_SUPPLY_TECHNOLOGY_LIPO,
 
 	/* Cell Data */
 	.vempty = 0x7D5A,		/* 0x12 */

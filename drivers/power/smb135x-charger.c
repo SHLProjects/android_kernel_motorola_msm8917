@@ -884,7 +884,13 @@ static int usb_current_table_smb1356[] = {
 	1560,
 	1620,
 	1680,
-	1800
+	1800,
+	1850,
+	1880,
+	1910,
+	1950,
+	1970,
+	2000
 };
 
 static int fastchg_current_table[] = {
